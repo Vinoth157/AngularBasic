@@ -1,0 +1,8 @@
+<ul *ngFor="let user of userDetails">
+  <li>
+    <a [routerLink]="['userData', user.id]"
+      >click here to see {{ user.name }}'s info</a
+    >
+  </li>
+</ul>
+<router-outlet></router-outlet>

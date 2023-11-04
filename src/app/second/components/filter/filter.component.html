@@ -1,0 +1,43 @@
+<header>Inbuild Pipes</header>
+<div class="container my-3">
+  <h5>Keyvalue pipes</h5>
+  <div style="display: inline-flex">
+    <table>
+      <tr *ngFor="let map of mapValue | keyvalue: sortOrder">
+        <td>{{ map.key }} : {{ map.value }}</td>
+      </tr>
+    </table>
+    <table>
+      <tr *ngFor="let obj of object | keyvalue">
+        <td>{{ obj.key }} : {{ obj.value }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<hr />
+<div class="container my-3">
+  <div style="display: inline-flex">
+    <table>
+      <tr>
+        <td>Date</td>
+        <td>{{ currentDate | date }}</td>
+      </tr>
+      <tr>
+        <td>Short Date</td>
+        <td>{{ currentDate | date: "shortDate" }}</td>
+      </tr>
+      <tr>
+        <td>Short Time</td>
+        <td>{{ currentDate | date: "shortTime" }}</td>
+      </tr>
+      <tr>
+        <td>Custom Time</td>
+        <td>{{ currentDate | date: "h:mm a z" }}</td>
+      </tr>
+      <tr>
+        <td>Short Time zone - GMT</td>
+        <td>{{ currentDate | date: "shortTime":"UTC" }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

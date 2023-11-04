@@ -1,0 +1,9 @@
+<p>custom-filter works!</p>
+<!-- <input type="text" name="countryCode" id="countryCode" #ccode /> -->
+<select name="countryCode" id="countryCode" [(ngModel)]="ccode">
+  <option value="ind">+91</option>
+  <option value="uk">+1</option>
+  <option value="us">+2</option>
+</select>
+<input type="text" [(ngModel)]="phoneNum" />
+<p>Phone Number : {{ phoneNum | phoneNumber: ccode }}</p>

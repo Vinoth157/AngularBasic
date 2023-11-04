@@ -1,0 +1,19 @@
+<header>Parent</header>
+<div class="container my-3">
+  <label for="eName">Employee Name :</label> &nbsp;
+  <input type="text" name="eName" [(ngModel)]="empName" />
+</div>
+<div class="container my-3">
+  <label for="eAge">Employee Age :</label> &NonBreakingSpace;
+  {{ empAge }}
+</div>
+
+<hr />
+
+<div class="container my-3">
+  <app-child
+    [empName]="empName"
+    (empAgeEventEmit)="employeeAge($event)"
+  ></app-child>
+</div>
+<hr />

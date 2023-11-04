@@ -1,0 +1,11 @@
+<header>Child</header>
+<div class="container my-3">
+  <label for="eName">Employee Name :</label> &nbsp;
+  {{ EName }}
+</div>
+
+<div class="container my-3">
+  <label for="empAge">Employee Age :</label> &nbsp;
+  <input name="empAge" type="text" [(ngModel)]="empAge" /> &nbsp;
+  <button (click)="onChildClick()">Transfer to Parent</button>
+</div>

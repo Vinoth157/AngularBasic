@@ -1,0 +1,32 @@
+<div class="backdrop"></div>
+<div class="container-fluid loginRegister">
+  <h1>Login/Register</h1>
+  <form class="loginRegisterForm" [formGroup]="loginRegisterForm">
+    <div class="mb-3">
+      <label class="me-3" for="userEmail">User Email</label>
+      <input
+        #userEmail
+        type="email"
+        name="userEmail"
+        class="userEmail"
+        formControlName="userEmail"
+        placeholder="email@email.com"
+        (blur)="isUserAvailable(userEmail)"
+      />
+
+      <div *ngIf="getUserEmail?.touched">
+        <span *ngIf="getUserEmail?.pending"> Checking </span>
+        <div *ngIf="getUserEmail?.invalid">
+          <span *ngIf="getUserEmail?.errors?.required">Email Required</span>
+          <span *ngIf="getUserEmail?.errors?.emailAvailable"
+            >Email Available</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <button type="button" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <ng-template #loginReg></ng-template>
+</div>

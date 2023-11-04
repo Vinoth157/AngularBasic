@@ -1,0 +1,19 @@
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 50;
+}
+.loginRegister {
+  width: 30vw;
+  top: 30vh;
+  left: 30vw;
+  position: fixed;
+  z-index: 100;
+  background-color: white;
+  border-width: 2px;
+  box-shadow: 5px 10px 10px black;
+}

@@ -1,0 +1,18 @@
+<p>data-form works!</p>
+
+<form [formGroup]="memberData">
+  <input type="text" formControlName="memberName" />
+  <!-- <ng-container formArrayName="memberCities">
+    <div *ngFor="let place of memCities.controls; let i = index">
+      <input type="text" [formControlName]="i" />
+    </div>
+  </ng-container>
+  <button class="btn btn-primary" (click)="addData()">Add</button> -->
+  <ng-container formArrayName="memberConnect">
+    <div *ngFor="let connect of memberConnects.controls; let i = index">
+      <input type="checkbox" [formControlName]="i" />{{ usrContact[i].device }}
+    </div>
+  </ng-container>
+  <button class="btn btn-primary" (click)="addData()">Add Data</button>
+  <button class="btn btn-secondary" (click)="getData()">Get Data</button>
+</form>

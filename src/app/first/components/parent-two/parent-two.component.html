@@ -1,0 +1,18 @@
+<header>Parent Two - View Child</header>
+<div class="container my-3">
+  <button #this (click)="changeView('this')" class="btn">This</button>
+  OR
+  <button #that (click)="changeView('that')" class="btn">That</button>
+</div>
+<hr />
+<div class="container my-2">
+  <button (click)="increment()">Increment</button> &nbsp;
+  <button (click)="decrement()">Decrement</button>
+</div>
+<hr />
+<div class="container my-4">
+  <app-child-two #childTwo>
+    <span class="one">Content from Parent Two to Child Two</span>
+    <span class="two"> using ngContent</span>
+  </app-child-two>
+</div>

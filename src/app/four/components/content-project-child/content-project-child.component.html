@@ -1,0 +1,17 @@
+<body #fullContent>
+  <p #childContent>content-project-child works!</p>
+  <ng-content select=".header"></ng-content>
+  <ng-content select=".content"></ng-content>
+
+  <hr />
+  <h3 #childrenView>View children</h3>
+  <p #childrenView>
+    View Children will be applicable for all tags with same template ref
+    variables
+  </p>
+
+  <hr />
+  <a href="www.google.com" target="_blank">blank</a>
+  <a href="www.google.com" target="_self">self</a>
+  <ng-content select=".subheading"></ng-content>
+</body>

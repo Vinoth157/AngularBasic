@@ -1,0 +1,50 @@
+<div class="backdrop"></div>
+<div class="login-box container-fluid">
+  <h1>Login Form</h1>
+  <form [formGroup]="loginForm" class="loginForm">
+    <div class="mb-3">
+      <label for="username">UserName</label>
+      <input
+        class="form-control"
+        type="text"
+        name="username"
+        formControlName="username"
+        placeholder="username"
+      />
+      <div *ngIf="userNameField?.touched && userNameField?.invalid">
+        <!-- <div *ngIf="loginForm.get('username')?.errors?.required">
+          UserName required
+        </div> -->
+        <span *ngIf="loginForm.get('username')?.errors?.patternValid"
+          >UserName should only contain numbers and letters</span
+        >
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password">Password</label>
+      <input
+        class="form-control"
+        type="password"
+        name="password"
+        formControlName="password"
+        placeholder="password"
+      />
+      <div *ngIf="passwordField?.touched && passwordField?.invalid">
+        <div *ngIf="loginForm.get('password')?.errors?.required">
+          Password required
+        </div>
+        <span *ngIf="loginForm.get('password')?.errors?.patternValid"
+          >Password should only contain numbers and letters</span
+        >
+      </div>
+    </div>
+  </form>
+
+  <button class="btn btn-primary me-2" [disabled]="loginForm.invalid">
+    Login
+  </button>
+  <button class="btn btn-secondary me-2" (click)="closeLogin()">Close</button>
+  <button class="btn btn-primary me-2" (click)="redirectToRegister()">
+    Redirect to Register
+  </button>
+</div>

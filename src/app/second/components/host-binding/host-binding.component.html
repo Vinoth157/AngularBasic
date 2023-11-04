@@ -1,0 +1,15 @@
+<p>Host binding & HostListener with custom directive</p>
+<p appHighlight>host-binding works!</p>
+
+<select name="phoneType" id="phoneType" [(ngModel)]="phoneType">
+  <option value="mob">Mobile</option>
+  <option value="tel">Telephone</option>
+</select>
+
+<input
+  [(ngModel)]="phoneNum"
+  appPhoneNumberMask="{{ phoneType }}"
+  type="text"
+  name="phoneNum"
+  id="phoneNum"
+/>

@@ -1,0 +1,78 @@
+<div class="backdrop"></div>
+<div class="register-box container-fluid">
+  <h1>Register Form</h1>
+  <form [formGroup]="registerForm" class="registerForm">
+    <div class="mb-3">
+      <label for="email">Email</label>
+      <input
+        class="form-control"
+        type="email"
+        name="email"
+        formControlName="email"
+        placeholder="email"
+      />
+      <div *ngIf="emailField?.touched && emailField?.invalid">
+        <div *ngIf="emailField?.errors?.required">Email required</div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="username">UserName</label>
+      <input
+        class="form-control"
+        type="text"
+        name="username"
+        formControlName="userName"
+        placeholder="username"
+      />
+      <div *ngIf="userNameField?.touched && userNameField?.invalid">
+        <div *ngIf="userNameField?.errors?.required">UserName required</div>
+        <span *ngIf="userNameField?.errors?.patternValid"
+          >UserName should only contain numbers and letters</span
+        >
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password">Password</label>
+      <input
+        class="form-control"
+        type="password"
+        name="password"
+        formControlName="password"
+        placeholder="password"
+      />
+      <div *ngIf="passwordField?.touched && passwordField?.invalid">
+        <div *ngIf="loginForm.get('password')?.errors?.required">
+          Password required
+        </div>
+        <span *ngIf="loginForm.get('password')?.errors?.patternValid"
+          >Password should only contain numbers and letters</span
+        >
+      </div>
+    </div>
+  </form>
+  <form [formGroup]="dataForm">
+    <div class="mb-3" formArrayName="customData">
+      <label>Custom Data</label>
+      <div
+        *ngFor="
+          let control of dataForm.get('customData')?.controls;
+          let i = index
+        "
+      >
+        <input type="text" [formControlName]="i" />
+      </div>
+      <button class="btn btn-primary me-2" (click)="loadData()">Load</button>
+      <button class="btn btn-secondary me-2" (click)="addData()">Add</button>
+    </div>
+  </form>
+
+  <button class="btn btn-primary me-2" [disabled]="registerForm.invalid">
+    Register
+  </button>
+  <button class="btn btn-secondary me-2" (click)="closeRegister()">
+    Close
+  </button>
+  <button class="btn btn-primary me-2" (click)="redirectToLogin()">
+    Redirect to Login
+  </button>
+</div>

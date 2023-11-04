@@ -1,0 +1,14 @@
+<section *appUserFilter="2000 as time; then userData">
+  <p>User data will load in {{ time }} seconds</p>
+</section>
+
+<ng-template #userData>
+  <ul *ngFor="let userDetail of userDetails">
+    <li>{{ userDetail.name }}</li>
+    <li>{{ userDetail.age }}</li>
+  </ul>
+</ng-template>
+
+<ng-template *appLooping="userDetails">
+  <p>testt</p>
+</ng-template>

@@ -1,0 +1,15 @@
+<header>Parent Three - Content Child</header>
+<div class="container my-3">
+  <h2>Content Child - Changes done on the content projection</h2>
+</div>
+
+<hr />
+<app-child-three #childThree>
+  <h3 class="chkOne" #cContentOne>Child Three</h3>
+  <div class="container my-3 chkTwo" #cContentTwo>
+    <label for="city">City</label> &nbsp;
+    <input type="text" name="city" id="city" />
+  </div>
+</app-child-three>
+
+<a [routerLink]="['/first/second']">ddd</a>
