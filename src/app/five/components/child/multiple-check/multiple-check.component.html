@@ -9,7 +9,7 @@
           <input
             type="checkbox"
             [value]="tech.code"
-            (change)="controlOnChange($event)"
+            (change)="controlOnChange($any($event))"
           />
           {{ tech.name }}
         </label>

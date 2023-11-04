@@ -1,9 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {
   AbstractControl,
-  UntypedFormBuilder,
+  FormBuilder,
   FormControl,
-  UntypedFormGroup,
+  FormGroup,
   Validators,
 } from '@angular/forms';
 import { validatePatterns } from '../../../../shared/validators/pattern-validator';
@@ -14,11 +14,11 @@ import { validatePatterns } from '../../../../shared/validators/pattern-validato
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private formBuilder: UntypedFormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {}
 
-  loginForm: UntypedFormGroup = this.formBuilder.group({
+  loginForm: FormGroup = this.formBuilder.group({
     username: ['', [Validators.required, validatePatterns(/^\[a-zA-Z0-9]/)]],
     password: [
       '',

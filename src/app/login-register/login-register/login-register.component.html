@@ -17,8 +17,8 @@
       <div *ngIf="getUserEmail?.touched">
         <span *ngIf="getUserEmail?.pending"> Checking </span>
         <div *ngIf="getUserEmail?.invalid">
-          <span *ngIf="getUserEmail?.errors?.required">Email Required</span>
-          <span *ngIf="getUserEmail?.errors?.emailAvailable"
+          <span *ngIf="getUserEmail?.errors?.['required']">Email Required</span>
+          <span *ngIf="getUserEmail?.errors?.['emailAvailable']"
             >Email Available</span
           >
         </div>

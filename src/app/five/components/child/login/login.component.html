@@ -15,7 +15,7 @@
         <!-- <div *ngIf="loginForm.get('username')?.errors?.required">
           UserName required
         </div> -->
-        <span *ngIf="loginForm.get('username')?.errors?.patternValid"
+        <span *ngIf="loginForm.get('username')?.errors?.['patternValid']"
           >UserName should only contain numbers and letters</span
         >
       </div>
@@ -30,10 +30,10 @@
         placeholder="password"
       />
       <div *ngIf="passwordField?.touched && passwordField?.invalid">
-        <div *ngIf="loginForm.get('password')?.errors?.required">
+        <div *ngIf="loginForm.get('password')?.errors?.['required']">
           Password required
         </div>
-        <span *ngIf="loginForm.get('password')?.errors?.patternValid"
+        <span *ngIf="loginForm.get('password')?.errors?.['patternValid']"
           >Password should only contain numbers and letters</span
         >
       </div>

@@ -1,11 +1,12 @@
 import { CustomFilterComponent } from './../../../../second/components/custom-filter/custom-filter.component';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
-  UntypedFormGroup,
-  UntypedFormBuilder,
+  FormGroup,
+  FormBuilder,
   Validators,
-  UntypedFormControl,
-  UntypedFormArray,
+  FormControl,
+  FormArray,
+  Form,
 } from '@angular/forms';
 import { validatePatterns } from '../../../../shared/validators/pattern-validator';
 
@@ -15,10 +16,11 @@ import { validatePatterns } from '../../../../shared/validators/pattern-validato
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private formBuilder: UntypedFormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {}
-  registerForm: UntypedFormGroup = this.formBuilder.group({
+  cusData?: FormArray;
+  registerForm: FormGroup = this.formBuilder.group({
     userName: ['', [Validators.required, validatePatterns(/^[a-zA-Z0-9]/)]],
     password: [
       '',
@@ -30,7 +32,7 @@ export class RegisterComponent implements OnInit {
     ],
     email: ['', Validators.required],
   });
-  dataForm: UntypedFormGroup = this.formBuilder.group({
+  dataForm: FormGroup = this.formBuilder.group({
     customData: this.formBuilder.array([
       // new FormControl('one'),
       // new FormControl('two'),
@@ -50,14 +52,14 @@ export class RegisterComponent implements OnInit {
     ];
     data.forEach((val: any) => {
       console.log(val.availability);
-      let cusData = this.dataForm.get('customData') as UntypedFormArray;
-      cusData.push(new UntypedFormControl(val.device));
+      this.cusData = this.dataForm.get('customData') as FormArray;
+      this.cusData.push(new FormControl(val.device));
     });
   }
 
   addData() {
-    let cusData = this.dataForm.get('customData') as UntypedFormArray;
-    cusData.push(new UntypedFormControl());
+    this.cusData = this.dataForm.get('customData') as FormArray;
+    this.cusData.push(new FormControl());
   }
 
   get passwordField() {

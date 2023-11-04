@@ -10,19 +10,19 @@ import { DynamicOneComponent } from './components/dynamic/child/dynamic-one/dyna
 import { DynamicTwoComponent } from './components/dynamic/child/dynamic-two/dynamic-two.component';
 import { AlertDesignComponent } from './components/alert-design/alert-design.component';
 import { AlertWithCloseComponent } from './shared/components/alert-with-close/alert-with-close.component';
-import { MatLegacySliderModule as MatSliderModule } from '@angular/material/legacy-slider';
+// import { MatLegacySliderModule as MatSliderModule } from '@angular/material/MatLegacySliderModule';
 
 @NgModule({
-    declarations: [
-        DynamicComponent,
-        ThirdHeaderComponent,
-        ThirdComponent,
-        DynHighlightDirective,
-        DynamicOneComponent,
-        DynamicTwoComponent,
-        AlertDesignComponent,
-        AlertWithCloseComponent,
-    ],
-    imports: [CommonModule, ThirdRoutingModule, MatSliderModule]
+  declarations: [
+    DynamicComponent,
+    ThirdHeaderComponent,
+    ThirdComponent,
+    DynHighlightDirective,
+    DynamicOneComponent,
+    DynamicTwoComponent,
+    AlertDesignComponent,
+    AlertWithCloseComponent,
+  ],
+  imports: [CommonModule, ThirdRoutingModule],
 })
 export class ThirdModule {}

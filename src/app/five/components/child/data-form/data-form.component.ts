@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  UntypedFormArray,
-  UntypedFormBuilder,
-  UntypedFormControl,
-  UntypedFormGroup,
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
   Validators,
 } from '@angular/forms';
 
@@ -13,8 +13,8 @@ import {
   styleUrls: ['./data-form.component.css'],
 })
 export class DataFormComponent implements OnInit {
-  constructor(private fb: UntypedFormBuilder) {}
-  memberData?: UntypedFormGroup;
+  constructor(private fb: FormBuilder) {}
+  memberData: FormGroup = this.fb.group({});
   usrContact = [
     {
       device: 'mobile',
@@ -38,16 +38,16 @@ export class DataFormComponent implements OnInit {
     });
 
     this.usrContact.forEach((val: any) => {
-      this.memberConnects.push(new UntypedFormControl(val.availability));
+      this.memberConnects.push(new FormControl(val.availability));
     });
   }
 
   get memberConnects() {
-    return this.memberData?.controls['memberConnect'] as UntypedFormArray;
+    return this.memberData?.controls['memberConnect'] as FormArray;
   }
 
   addData() {
-    this.memberConnects.push(new UntypedFormControl());
+    this.memberConnects.push(new FormControl());
   }
   getData() {
     console.log(this.memberData?.value);

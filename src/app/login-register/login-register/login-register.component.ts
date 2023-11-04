@@ -2,9 +2,9 @@ import { defaultIfEmpty, map, Subject, merge, from, timer, filter } from 'rxjs';
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import {
   AbstractControl,
-  UntypedFormBuilder,
+  FormBuilder,
   FormControl,
-  UntypedFormGroup,
+  FormGroup,
   NgControl,
   Validators,
 } from '@angular/forms';
@@ -20,10 +20,10 @@ import { LoginRegisterService } from '../services/login-register.service';
 })
 export class LoginRegisterComponent implements OnInit {
   constructor(
-    private fb: UntypedFormBuilder,
+    private fb: FormBuilder,
     private loginRegisterService: LoginRegisterService
   ) {}
-  loginRegisterForm!: UntypedFormGroup;
+  loginRegisterForm!: FormGroup;
   @ViewChild('loginReg', { read: ViewContainerRef, static: true })
   loginRegister!: ViewContainerRef;
   logRegSubject!: Subject<boolean>;
@@ -45,7 +45,7 @@ export class LoginRegisterComponent implements OnInit {
     });
   }
 
-  isUserAvailable(user: AbstractControl) {
+  isUserAvailable(user: HTMLInputElement) {
     if (!this.getUserEmail?.errors) {
       this.loginRegister.clear();
       this.loginRegisterService

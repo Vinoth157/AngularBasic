@@ -12,7 +12,7 @@
         placeholder="email"
       />
       <div *ngIf="emailField?.touched && emailField?.invalid">
-        <div *ngIf="emailField?.errors?.required">Email required</div>
+        <div *ngIf="emailField?.errors?.['required']">Email required</div>
       </div>
     </div>
     <div class="mb-3">
@@ -25,8 +25,8 @@
         placeholder="username"
       />
       <div *ngIf="userNameField?.touched && userNameField?.invalid">
-        <div *ngIf="userNameField?.errors?.required">UserName required</div>
-        <span *ngIf="userNameField?.errors?.patternValid"
+        <div *ngIf="userNameField?.errors?.['required']">UserName required</div>
+        <span *ngIf="userNameField?.errors?.['patternValid']"
           >UserName should only contain numbers and letters</span
         >
       </div>
@@ -41,10 +41,8 @@
         placeholder="password"
       />
       <div *ngIf="passwordField?.touched && passwordField?.invalid">
-        <div *ngIf="loginForm.get('password')?.errors?.required">
-          Password required
-        </div>
-        <span *ngIf="loginForm.get('password')?.errors?.patternValid"
+        <div *ngIf="passwordField?.errors?.['required']">Password required</div>
+        <span *ngIf="passwordField?.errors?.['patternValid']"
           >Password should only contain numbers and letters</span
         >
       </div>
@@ -53,12 +51,7 @@
   <form [formGroup]="dataForm">
     <div class="mb-3" formArrayName="customData">
       <label>Custom Data</label>
-      <div
-        *ngFor="
-          let control of dataForm.get('customData')?.controls;
-          let i = index
-        "
-      >
+      <div *ngFor="let control of cusData?.controls; let i = index">
         <input type="text" [formControlName]="i" />
       </div>
       <button class="btn btn-primary me-2" (click)="loadData()">Load</button>

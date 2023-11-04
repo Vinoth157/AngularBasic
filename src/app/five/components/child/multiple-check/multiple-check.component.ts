@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  UntypedFormArray,
-  UntypedFormBuilder,
-  UntypedFormControl,
-  UntypedFormGroup,
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
   Validators,
 } from '@angular/forms';
 
@@ -12,7 +12,7 @@ import {
   templateUrl: './multiple-check.component.html',
 })
 export class MultipleCheckComponent implements OnInit {
-  form: UntypedFormGroup;
+  form: FormGroup;
   selectedCheckBoxList: any = [];
   techStackList: any = [
     { id: 1, name: 'Angular', code: 'ANG' },
@@ -22,7 +22,7 @@ export class MultipleCheckComponent implements OnInit {
     { id: 5, name: 'jQuery', code: 'JQU' },
   ];
 
-  constructor(private formBuilder: UntypedFormBuilder) {
+  constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       technology: this.formBuilder.array([], [Validators.required]),
     });
@@ -31,11 +31,12 @@ export class MultipleCheckComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
+  // controlOnChange(e: Event) {
   controlOnChange(e: { target: { checked: any; value: any } }) {
-    const technologies: UntypedFormArray = this.form.get('technology') as UntypedFormArray;
+    const technologies: FormArray = this.form.get('technology') as FormArray;
 
     if (e.target.checked) {
-      technologies.push(new UntypedFormControl(e.target.value));
+      technologies.push(new FormControl(e.target.value));
       this.selectedCheckBoxList.push(e.target.value);
     } else {
       const index = technologies.controls.findIndex(
