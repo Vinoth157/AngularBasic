@@ -1,13 +1,14 @@
 // import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
 // import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
 // import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 // import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
 
@@ -22,6 +23,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     // MatStepperModule,
     // MatFormFieldModule,
     ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
     // MatInputModule,
   ],
   providers: [],

@@ -5,6 +5,10 @@
   <span class="content"
     >Test Content from content projection parent component</span
   >
-  <span class="subheading">Content children values from parent</span>
-  <span class="subheading">Both will be accessed via contentChildren</span>
+  <span #childrenContent class="subheading"
+    >Content children values from parent</span
+  >
+  <p #childrenContent class="subheading">
+    Both will be accessed via contentChildren
+  </p>
 </app-content-project-child>

@@ -15,7 +15,7 @@ export class LoginRegisterService {
   ];
 
   public filterUser(user: string): Observable<any> {
-    return merge(from(this.listOfEmails), timer(3000)).pipe(
+    return merge(from(this.listOfEmails), timer(500)).pipe(
       filter((em) => em == user)
     );
   }

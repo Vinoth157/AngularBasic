@@ -1,5 +1,4 @@
-import { from, map, filter } from 'rxjs';
-import { AbstractControl, AsyncValidatorFn, ValidatorFn } from '@angular/forms';
+import { AbstractControl, ValidatorFn } from '@angular/forms';
 
 export function validatePatterns(regex: RegExp): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {

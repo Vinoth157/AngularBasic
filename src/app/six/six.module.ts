@@ -8,18 +8,14 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { AddressComponent } from './components/child/address/address.component';
 import { BgColourDirective } from './shared/directives/bg-colour.directive';
 
-
 @NgModule({
   declarations: [
     SixComponent,
     SixHeaderComponent,
     UserFormComponent,
     AddressComponent,
-    BgColourDirective
+    // BgColourDirective
   ],
-  imports: [
-    CommonModule,
-    SixRoutingModule
-  ]
+  imports: [CommonModule, SixRoutingModule],
 })
-export class SixModule { }
+export class SixModule {}

@@ -1,0 +1,13 @@
+06/11/2023
+    Host Directive - 
+        Directives can be added in component file instead of template file. We apply directives to a component by adding a hostDirectives property to a component's decorator. We call such directives host directives. i.e) AddressComponent
+    Service Worker - 
+        Configuration for making our web pages available on offline, it just makes the cache of all assets(html/css/images) and datas.
+        A Service Worker is a script that browser runs in the background, separate from a web page. With the help of the service worker, we can also implement push notification and background sync. Service workers can store files or responses in cache storage so it allows developers to create an offline experience for the user.
+        Command to add Service Worker configuration - 
+            ng add @angular/pwa    (i.e pwa - progressive web app - creates offline work experience, cache user's data/assets, can be added to home screen like native apps)
+        Command to install http-server - 
+            npm install -g http-server
+        Command to run -
+            http-server -p 8081
+    

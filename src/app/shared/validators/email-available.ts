@@ -1,5 +1,5 @@
-import { from, map, filter, defaultIfEmpty, merge, timer } from 'rxjs';
-import { AbstractControl, AsyncValidatorFn } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
+import { defaultIfEmpty, map } from 'rxjs';
 import { LoginRegisterService } from 'src/app/login-register/services/login-register.service';
 
 export function ValidateEmail(logRegService: LoginRegisterService) {
