@@ -1,0 +1,16 @@
+<app-template-child
+  [parentCont]="parentContent"
+  [userCont]="userContent"
+></app-template-child>
+<ng-template #parentContent>
+  <h2>Content from Parent Component</h2>
+  <p>
+    It has roots in a piece of classical Latin literature from 45 BC, making it
+    over 2000 years old.
+  </p>
+</ng-template>
+
+<ng-template #userContent let-user="member">
+  User name is {{ user.name }}, He/She is from {{ user.city }} and
+  {{ user.age }} years old
+</ng-template>

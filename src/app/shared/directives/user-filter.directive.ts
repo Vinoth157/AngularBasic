@@ -38,7 +38,7 @@ export class UserFilterDirective implements OnInit {
     setTimeout(() => {
       this.vcr.clear();
       this.vcr.createEmbeddedView(this.userData);
-      this.vcr.createEmbeddedView(this.templateRef, this.context, 1);
+      // this.vcr.createEmbeddedView(this.templateRef, this.context, 1);
     }, this.context.appUserFilter * 1000);
   }
 }

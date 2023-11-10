@@ -16,7 +16,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
       }
     `,
   ],
-  encapsulation: ViewEncapsulation.Emulated,
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class EncapsulationComponent implements OnInit {
   constructor() {}

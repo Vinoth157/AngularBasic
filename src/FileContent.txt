@@ -10,4 +10,32 @@
             npm install -g http-server
         Command to run -
             http-server -p 8081
-    
+07/11/2023
+    FormRecord - 
+        Extends FormGroup, can add controls dynamically. Any control of type string|null can be added to this FormRecord. i.e) FormFieldRecordComponent
+    TemplateRef - 
+        Represents an embedded template that can be used to instantiate embedded views. To instantiate embedded views based on a template, use the ViewContainerRef method createEmbeddedView() . i.e) TemplateComponent.ts
+        [ngTemplateOutlet] -
+            Inserts an embedded view from a prepared TemplateRef
+        [ngTemplateOutletContext]
+            Passes data to template component from source.
+
+09/11/2023 
+    Dependency Injection
+        Injector - 
+            Object in Angular Dependency Injection.
+            Responsible for creating object(class instance) and injecting object in component constructor. i.e) injector.ts 
+        Injectors Hierarchy - 
+            Types - Model Injector and Element Injector
+            Model Injector - 
+                When angular starts, it will create root injector and registers all services provided via @Injectable annotation & services in NgModule - provider.
+                All other modules added in app model they wil not create new injectors, ONLY for NON-LAZY modules.  Service declared in other modules provider will go to ROOT Injector only.
+                For Lazy loaded modules, it will create child injectors
+                Story - In Lazy loading modules, if we add service in provider object(in child modules) then the child injectors will create new service instance, so we will have multiple instance for given service. "ProvidedIn: 'root' resolves this issue"
+                Hierarchy ->        "Null Injector  >  PlatformModule  >  Root Injector  >  Child Injector"
+            Element Injector - its nothing but the Providers declared in component files.
+        Resolution Modifiers -
+            @Optional - Services that aren't contains either providedIn or not mentioned in providers at AppModule, will throw "No provider found".  Optional annotation will skip the error. i.e) OptionalModifierComponent
+            @Self - By Mentioning @Self annotation to any service, we are forcing that service injection should be mentioned in the same component decorator, it will throw error even if service contains providedIn or mentioned in the parent component. i.e) SelfModifierComponent
+            @SkipSelf - It will skip the component that has skipself annotation and look for parent component
+            @Host

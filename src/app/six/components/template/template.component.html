@@ -1,0 +1,17 @@
+<h1>Header for Template ref</h1>
+<p>
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+</p>
+<!-- <div #viewContent></div> -->
+<div [ngTemplateOutlet]="templateContent"></div>
+<p>
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+  when an unknown printer took a galley of type and scrambled it to make a type
+  specimen book.
+</p>
+<ng-template #templateContent>
+  <p>This content can be moved as per the Template Ref</p>
+</ng-template>
+<hr />
+<hr />
+<app-template-parent></app-template-parent>

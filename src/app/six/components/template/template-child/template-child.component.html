@@ -1,0 +1,24 @@
+<h1>Template content from Parent to Child</h1>
+
+<ng-container [ngTemplateOutlet]="parentCont || childCont"></ng-container>
+<ng-template #childCont>
+  <h2>Content from Child component itself</h2>
+  <p>
+    It is a long established fact that a reader will be distracted by the
+    readable content of a page when looking at its layout
+  </p>
+</ng-template>
+<hr />
+<hr />
+
+<ng-container
+  [ngTemplateOutlet]="userCont || defaultUser"
+  [ngTemplateOutletContext]="{ member: member }"
+></ng-container>
+
+<ng-template #defaultUser>
+  <span
+    >I'm {{ member.name }} from {{ member.city }} and am {{ member.age }} years
+    old</span
+  >
+</ng-template>

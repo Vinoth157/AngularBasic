@@ -1,0 +1,19 @@
+<div>
+  <form [formGroup]="dataForm">
+    <div *ngFor="let eachUser of userData">
+      <input type="text" [formControlName]="eachUser" />
+      <button (click)="saveData(eachUser)">Save</button>
+    </div>
+  </form>
+  <form [formGroup]="loginForm">
+    <div>
+      <label for="loginId">Login ID</label>
+      <input class="loginId" type="text" formControlName="loginId" />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input class="password" type="text" formControlName="password" />
+    </div>
+    <button (click)="login()">Login</button>
+  </form>
+</div>
