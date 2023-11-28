@@ -34,10 +34,10 @@ const routes: Routes = [
       //   path: 'self',
       //   component: SelfModifierComponent,
       // },
-      // {
-      //   path: 'skipSelf',
-      //   component: SkipSelfModifierComponent,
-      // },
+      {
+        path: 'skipSelf',
+        component: SkipSelfModifierComponent,
+      },
       {
         path: 'host',
         component: HostModifierComponent,

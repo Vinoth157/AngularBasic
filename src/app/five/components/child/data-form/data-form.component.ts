@@ -18,17 +18,18 @@ export class DataFormComponent implements OnInit {
   usrContact = [
     {
       device: 'mobile',
-      availability: true,
+      displayName: 'Mobile Phone',
     },
     {
       device: 'email',
-      availability: false,
+      displayName: 'Email ID',
     },
     {
       device: 'mailAddress',
-      availability: true,
+      displayName: 'Mail Address',
     },
   ];
+  usrDetail = ['one', 'two', 'three', 'four'];
 
   ngOnInit(): void {
     this.memberData = this.fb.group({
@@ -37,8 +38,8 @@ export class DataFormComponent implements OnInit {
       memberConnect: this.fb.array([]),
     });
 
-    this.usrContact.forEach((val: any) => {
-      this.memberConnects.push(new FormControl(val.availability));
+    this.usrDetail.forEach((val: any) => {
+      this.memberConnects.push(new FormControl(false));
     });
   }
 
@@ -56,11 +57,11 @@ export class DataFormComponent implements OnInit {
       // .map((v: any, i: number) => (v ? this.usrContact[i].device : null))
       .map((v: any, i: number) => {
         return {
-          device: this.usrContact[i].device,
-          availability: v,
+          device: this.usrDetail[i],
+          opted: v,
         };
       })
-      .filter((v: null) => v !== null);
+      .filter((v: any) => v.opted == true);
     console.log(data);
   }
 }

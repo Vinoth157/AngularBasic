@@ -10,7 +10,7 @@
   <button class="btn btn-primary" (click)="addData()">Add</button> -->
   <ng-container formArrayName="memberConnect">
     <div *ngFor="let connect of memberConnects.controls; let i = index">
-      <input type="checkbox" [formControlName]="i" />{{ usrContact[i].device }}
+      <input type="checkbox" [formControlName]="i" />{{ usrDetail[i] }}
     </div>
   </ng-container>
   <button class="btn btn-primary" (click)="addData()">Add Data</button>
