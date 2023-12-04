@@ -12,13 +12,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TemplateComponent } from './components/template/template.component';
 import { TemplateChildComponent } from './components/template/template-child/template-child.component';
 import { TemplateParentComponent } from './components/template/template-parent/template-parent.component';
-import { OptionalModifierComponent } from './DI/components/optional-modifier/optional-modifier.component';
-import { SelfModifierComponent } from './DI/components/self-modifier/self-modifier.component';
-import { SkipSelfModifierComponent } from './DI/components/skip-self-modifier/skip-self-modifier.component';
-import { UserService } from './DI/services/user.service';
-import { HostModifierComponent } from './DI/components/host-modifier/host-modifier.component';
-import { ParentDirective } from './DI/components/host-modifier/directive/parent.directive';
-import { ChildDirective } from './DI/components/host-modifier/directive/child.directive';
 
 @NgModule({
   declarations: [
@@ -31,15 +24,11 @@ import { ChildDirective } from './DI/components/host-modifier/directive/child.di
     TemplateComponent,
     TemplateChildComponent,
     TemplateParentComponent,
-    OptionalModifierComponent,
-    SelfModifierComponent,
-    SkipSelfModifierComponent,
-    HostModifierComponent,
-    ParentDirective,
-    ChildDirective,
   ],
   imports: [CommonModule, SixRoutingModule, ReactiveFormsModule],
-  providers: [UserService],
+  providers: [
+    // UserService,
+  ],
 })
 export class SixModule {
   // Below constructor for SkipSelf Resolution Modifiers

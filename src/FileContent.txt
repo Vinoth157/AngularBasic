@@ -39,3 +39,15 @@
             @Self - By Mentioning @Self annotation to any service, we are forcing that service injection should be mentioned in the same component decorator, it will throw error even if service contains providedIn or mentioned in the parent component. i.e) SelfModifierComponent
             @SkipSelf - It will skip the component that has skipself annotation and look for parent component
             @Host
+        Resolution Dependency Providers - 
+            useClass - Configures the injector to return an new instance of useClass for a token.
+                providers: [{provide: loggerService, useClass: OtherLoggerService }] i.e) UseClassComponent
+            useExisting - Configures the injector to return existing instance of useClass for a token.
+                providers: [{provide: loggerService, useExisting: OtherLoggerService }] i.e) UseClassComponent
+            useValue -  i.e) UseValueComponent - story -> when you just have methods/objects that are not injectable but want to use as a service
+            injectionToken - Creates a token that can be used in a DI Provider. i.e) useInjectionTokenComponent - @Inject()
+                story -> Use an InjectionToken whenever the type you are injecting is not reified (does not have a runtime representation) such as when injecting an interface, callable type, array or parameterized type.
+            useFactory - i.e) UseFactoryComponent
+            Multi option - multi: true(check in dependency module file) i.e) useMultiOptionComponent
+                when you want to access multiple services in component using single instance
+            Source-map-explorer is a tool used to explore and know our application, it will visualise the usage of all elements in our project. i.e) check package.json for command

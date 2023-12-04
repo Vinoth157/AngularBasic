@@ -9,7 +9,7 @@ import { UserService } from '../../services/user.service';
 export class SkipSelfModifierComponent {
   constructor(@SkipSelf() private _userService: UserService) {
     if (!!this._userService) {
-      this._userService.userName = 'Main ';
+      // this._userService.userName = 'Main ';
       this._userService.sayHi();
     }
   }

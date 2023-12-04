@@ -28,4 +28,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Generate components without test/style files
 
-ng g c <componentPath> --skip-tests=true --style=none
+ng g c <componentPath> --skip-tests=true --style=none --inline-template=true --flat
+
+## Instal yarn package manager globally
+
+npm install --global yarn
+
+## Add source-map-explorer
+
+yarn global add source-map-explorer
+
+## create lazy loaded module
+
+ng g m --module <appModuleName> --route <modulePath> <componentName>
+ng g m --module app.module --route test test

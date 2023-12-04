@@ -6,6 +6,7 @@ const routes: Routes = [
     path: 'first',
     loadChildren: () =>
       import('./first/first.module').then((m) => m.FirstModule),
+    title: 'firsstt', // Angular new upgrade
   },
   {
     path: 'second',
@@ -37,8 +38,13 @@ const routes: Routes = [
     loadChildren: () => import('./six/six.module').then((m) => m.SixModule),
   },
   {
+    path: 'dependency',
+    loadChildren: () =>
+      import('./dependency/dependency.module').then((m) => m.DependencyModule),
+  },
+  {
     path: '**',
-    redirectTo: 'six',
+    redirectTo: 'dependency ',
     pathMatch: 'full',
   },
 ];
