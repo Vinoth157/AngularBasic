@@ -13,6 +13,8 @@ import { UseFactoryComponent } from './components/DP/components/use-factory.comp
 import { ResolutionModifierComponent } from './components/DI/resolution-modifier.component';
 import { ResolutionDProviderComponent } from './components/DP/resolution-dprovider.component';
 import { UseMultiOptionComponent } from './components/DP/components/multiOption/use-multi-option.component';
+import { UseLibComponent } from './components/DP/components/use-lib.component';
+import { OptionViewProviderMainComponent } from './components/DP/components/viewProviders/option-view-provider-main.component';
 
 const routes: Routes = [
   {
@@ -75,8 +77,16 @@ const routes: Routes = [
             component: UseMultiOptionComponent,
           },
           {
+            path: 'lib',
+            component: UseLibComponent,
+          },
+          {
+            path: 'viewProvider',
+            component: OptionViewProviderMainComponent,
+          },
+          {
             path: '**',
-            redirectTo: 'multiOption',
+            redirectTo: 'lib',
             pathMatch: 'full',
           },
         ],

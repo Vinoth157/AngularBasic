@@ -17,6 +17,15 @@ import {
   serviceReport,
   uiReport,
 } from './components/DP/components/multiOption/reporter.service';
+import { UseLibComponent } from './components/DP/components/use-lib.component';
+import { UserFormModule } from 'projects/user-form/src/public-api';
+import { OptionViewProviderParentComponent } from './components/DP/components/viewProviders/option-view-provider-parent.component';
+import { OptionViewProviderChildComponent } from './components/DP/components/viewProviders/option-view-provider-child.component';
+import {
+  OptionViewProviderActualService,
+  OptionViewProviderService,
+} from './components/DP/components/viewProviders/option-view-provider.service';
+import { OptionViewProviderMainComponent } from './components/DP/components/viewProviders/option-view-provider-main.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +38,12 @@ import {
     ResolutionDProviderComponent,
     ResolutionDProviderHeaderComponent,
     UseMultiOptionComponent,
+    UseLibComponent,
+    OptionViewProviderParentComponent,
+    OptionViewProviderChildComponent,
+    OptionViewProviderMainComponent,
   ],
-  imports: [CommonModule, DependencyRoutingModule],
+  imports: [CommonModule, DependencyRoutingModule, UserFormModule],
   providers: [
     UserService,
     {
@@ -43,6 +56,11 @@ import {
       useClass: serviceReport,
       multi: true,
     },
+    {
+      provide: OptionViewProviderService,
+      useExisting: OptionViewProviderActualService,
+    },
+    // OptionViewProviderService,
   ],
 })
 export class DependencyModule {

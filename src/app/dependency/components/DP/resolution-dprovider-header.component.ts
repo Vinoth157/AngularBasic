@@ -55,6 +55,19 @@ import { Component } from '@angular/core';
                 >Multi-Option</a
               >
             </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" [routerLink]="['lib']"
+                >Use-Library</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                aria-current="page"
+                [routerLink]="['viewProvider']"
+                >Option - View Provider</a
+              >
+            </li>
           </ul>
         </div>
       </div>

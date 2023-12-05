@@ -44,7 +44,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'dependency ',
+    redirectTo: 'dependency',
     pathMatch: 'full',
   },
 ];

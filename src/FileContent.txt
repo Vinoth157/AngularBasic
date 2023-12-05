@@ -51,3 +51,6 @@
             Multi option - multi: true(check in dependency module file) i.e) useMultiOptionComponent
                 when you want to access multiple services in component using single instance
             Source-map-explorer is a tool used to explore and know our application, it will visualise the usage of all elements in our project. i.e) check package.json for command
+            Light weight injection token - Angular latest version supports tree shaking by default(i.e with "IvyEngine") i.e) useLibComponent and check library - userForm
+            viewProviders - its an option used only in component metadata, Defines the set of injectable objects that are visible to its view DOM children
+                story - Service that are injected in component class under "ViewProviders" metadata is applicable only for the respective DOM childrens, it will not applicable for component that are coming via content projection (ng-content). i.e) OptionViewProviderMainComponenta    
