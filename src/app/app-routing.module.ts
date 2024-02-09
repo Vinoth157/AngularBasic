@@ -43,8 +43,13 @@ const routes: Routes = [
       import('./dependency/dependency.module').then((m) => m.DependencyModule),
   },
   {
+    path: 'declartive',
+    loadChildren: () =>
+      import('./declartive/declartive.module').then((m) => m.DeclartiveModule),
+  },
+  {
     path: '**',
-    redirectTo: 'dependency',
+    redirectTo: 'declartive',
     pathMatch: 'full',
   },
 ];

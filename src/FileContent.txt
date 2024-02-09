@@ -54,3 +54,7 @@
             Light weight injection token - Angular latest version supports tree shaking by default(i.e with "IvyEngine") i.e) useLibComponent and check library - userForm
             viewProviders - its an option used only in component metadata, Defines the set of injectable objects that are visible to its view DOM children
                 story - Service that are injected in component class under "ViewProviders" metadata is applicable only for the respective DOM childrens, it will not applicable for component that are coming via content projection (ng-content). i.e) OptionViewProviderMainComponenta    
+
+08/02/2024
+    AsyncPipe -   
+        Binding data without using .subscribe(), it can be done using async operator. No need of unsubscribe incase of using Async operator. i.e) UserDataService  and DisplayFirebaseDataComponent

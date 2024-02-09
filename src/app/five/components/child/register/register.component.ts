@@ -59,6 +59,7 @@ export class RegisterComponent implements OnInit {
 
   addData() {
     this.cusData = this.dataForm.get('customData') as FormArray;
+    console.log(this.registerForm.value);
     this.cusData.push(new FormControl());
   }
 

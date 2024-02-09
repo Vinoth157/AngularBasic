@@ -64,10 +64,10 @@ import { OptionViewProviderMainComponent } from './components/DP/components/view
   ],
 })
 export class DependencyModule {
-  // constructor(private _userService: UserService) {
-  //   if (!!this._userService) {
-  //     this._userService.userName = 'Dependency Module';
-  //     this._userService.sayHi();
-  //   }
-  // }
+  constructor(private _userService: UserService) {
+    if (!!this._userService) {
+      this._userService.userName = 'Dependency Module';
+      this._userService.sayHi();
+    }
+  }
 }

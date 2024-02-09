@@ -7,6 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PhoneNumberPipe implements PipeTransform {
   constructor() {}
   transform(value: string, ...args: unknown[]): string {
+    console.log('pipe called');
     let phoneNum: string = value;
     if (phoneNum) {
       let inputVal = phoneNum?.replace(/\D/g, '');

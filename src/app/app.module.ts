@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HttpClientModule } from '@angular/common/http';
+
 // import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 // import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
 
@@ -29,9 +31,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    HttpClientModule,
     // MatInputModule,
   ],
-  providers: [],
+  // providers: [HttpClientModule, HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

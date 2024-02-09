@@ -4,6 +4,7 @@ import { SixComponent } from './six/six.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { FormFieldRecordComponent } from './components/form-field-record/form-field-record.component';
 import { TemplateComponent } from './components/template/template.component';
+import { TemplateOutletSampleComponent } from './components/template-outlet/template-outlet-sample.component';
 
 const routes: Routes = [
   {
@@ -23,8 +24,12 @@ const routes: Routes = [
         component: TemplateComponent,
       },
       {
+        path: 'templateOutlet',
+        component: TemplateOutletSampleComponent,
+      },
+      {
         path: '**',
-        redirectTo: 'template',
+        redirectTo: 'templateOutlet',
         pathMatch: 'full',
       },
     ],

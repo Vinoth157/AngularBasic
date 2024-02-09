@@ -9,7 +9,7 @@ export class DependencyComponent {
   constructor(private _userService: UserService) {
     if (!!this._userService) {
       this._userService.userName = 'Dependency Component';
-      this._userService.sayHi();
+      // this._userService.sayHi();
     }
   }
 }

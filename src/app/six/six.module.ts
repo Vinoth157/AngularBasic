@@ -12,6 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TemplateComponent } from './components/template/template.component';
 import { TemplateChildComponent } from './components/template/template-child/template-child.component';
 import { TemplateParentComponent } from './components/template/template-parent/template-parent.component';
+import { TemplateOutletSampleComponent } from './components/template-outlet/template-outlet-sample.component';
+import { TemplateOutletParentComponent } from './components/template-outlet/template-outlet-parent/template-outlet-parent.component';
+import { TemplateOutletChildComponent } from './components/template-outlet/template-outlet-child/template-outlet-child.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { TemplateParentComponent } from './components/template/template-parent/t
     TemplateComponent,
     TemplateChildComponent,
     TemplateParentComponent,
+    TemplateOutletSampleComponent,
+    TemplateOutletParentComponent,
+    TemplateOutletChildComponent,
   ],
   imports: [CommonModule, SixRoutingModule, ReactiveFormsModule],
   providers: [

@@ -1,0 +1,23 @@
+<p>
+  Binding data without using .subscribe(), it can be done using async operator.
+  No need of unsubscribe incase of using Async operator
+</p>
+
+<table class="table" *ngIf="userDataWithAddress$ | async as userData">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Age</td>
+      <td>Gender</td>
+      <td>Address</td>
+      <td>City</td>
+    </tr>
+  </thead>
+  <tr *ngFor="let user of userData">
+    <td>{{ user.name }}</td>
+    <td>{{ user.age }}</td>
+    <td>{{ user.gender }}</td>
+    <td>{{ user.address }}</td>
+    <td>{{ user.city }}</td>
+  </tr>
+</table>
