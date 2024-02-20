@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DeclartiveComponent } from './declarative/declartive.component';
 import { DisplayUserDataWithSortComponent } from './components/display-user-data-with-sort/display-user-data-with-sort.component';
+import { AddUserDataComponent } from './components/standalone/add-user-data/add-user-data.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
         path: 'impurePipe',
         component: DisplayUserDataWithSortComponent,
       },
+      // {
+      //   path: 'standalone',
+      //   component: AddUserDataComponent,
+      // },
       {
         path: '**',
         redirectTo: 'impurePipe',

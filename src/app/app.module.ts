@@ -10,6 +10,8 @@ import { HeaderComponent } from './header/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpClientModule } from '@angular/common/http';
+import { StandaloneRegisterComponent } from './declartive/components/standalone/standalone-register/standalone-register.component';
+import { AddUserDataComponent } from './declartive/components/standalone/add-user-data/add-user-data.component';
 
 // import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 // import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
@@ -33,6 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     }),
     HttpClientModule,
     // MatInputModule,
+    StandaloneRegisterComponent,
+    AddUserDataComponent,
   ],
   // providers: [HttpClientModule, HttpClient],
   bootstrap: [AppComponent],

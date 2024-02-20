@@ -60,3 +60,12 @@
     <td>{{ user.city }}</td>
   </tr>
 </table>
+<div class="container" style="position: relative; margin-top: 800px">
+  @defer ( on viewport; on timer(5s)){
+  <section class="container">
+    <app-standalone-register />
+  </section>
+  } @placeholder (minimum 2000ms) {
+  <p>Placeholder content</p>
+  }
+</div>

@@ -1,6 +1,7 @@
 06/11/2023
     Host Directive - 
-        Directives can be added in component file instead of template file. We apply directives to a component by adding a hostDirectives property to a component's decorator. We call such directives host directives. i.e) AddressComponent
+        Directives can be added in component file instead of template file. We apply directives to a component by adding a hostDirectives property to a component's decorator. 
+        We call such directives host directives. i.e) AddressComponent
     Service Worker - 
         Configuration for making our web pages available on offline, it just makes the cache of all assets(html/css/images) and datas.
         A Service Worker is a script that browser runs in the background, separate from a web page. With the help of the service worker, we can also implement push notification and background sync. Service workers can store files or responses in cache storage so it allows developers to create an offline experience for the user.
@@ -14,7 +15,8 @@
     FormRecord - 
         Extends FormGroup, can add controls dynamically. Any control of type string|null can be added to this FormRecord. i.e) FormFieldRecordComponent
     TemplateRef - 
-        Represents an embedded template that can be used to instantiate embedded views. To instantiate embedded views based on a template, use the ViewContainerRef method createEmbeddedView() . i.e) TemplateComponent.ts
+        Represents an embedded template that can be used to instantiate embedded views. 
+        To instantiate embedded views based on a template, use the ViewContainerRef method createEmbeddedView() . i.e) TemplateComponent.ts
         [ngTemplateOutlet] -
             Inserts an embedded view from a prepared TemplateRef
         [ngTemplateOutletContext]
@@ -58,3 +60,5 @@
 08/02/2024
     AsyncPipe -   
         Binding data without using .subscribe(), it can be done using async operator. No need of unsubscribe incase of using Async operator. i.e) UserDataService  and DisplayFirebaseDataComponent
+    Deferrable View - 
+        @defer(@viewport){<standaloneComponent/>}. i.e) DisplayUserDataWithSortComponent
