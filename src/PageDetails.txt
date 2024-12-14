@@ -1,0 +1,49 @@
+First Module :
+  First Component : 
+    Component interaction using @input() & @output decorator
+  Second Component : 
+    Component interaction using @ViewChild decorator, 
+      i) can able to change the DOM attribute, add/delete classes dynamically
+      ii) can able to call the child component methods
+    Data(tags) passed inside the child component element in parent component can be captured in child component using ng-content
+  Third Component : 
+    Similar to @ViewChild decorator, we can use @ContentChild decorator in child decorator to decorate the tags passed from parent component.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Second Module : 
+  First Component : Inbuild Pipes -> keyvalue, Date
+  Second Component : Custom filter(phone-number.pipe.ts)
+  Third Component : HostListener & HostBinding can be used in custom directives to style the element.
+  Fourth Component : Encapsulation - Shadow DOM / Emulated
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Fourth Module :
+  ContentProjectParentComponent : 
+    ViewChild(same component element) & ContentChild (parent component element) declared as ElementRef
+    ViewChildren & ContentChildren declared as QueryList<ElementRef>
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Fifth Module : 
+  DynamicRenderComponent : 
+    Using ViewContainerRef, we can able to create component and render dynamically.
+    i.e) ViewContainerRefObj.createComponent(ComponentName)
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Sixth Module : 
+  TemplateComponent :
+    Using TemplateRef, we can able to display the content anywhere based on TemplateRef
+    Using [ngTemplateOutlet], we can display the ng-template content in html.
+  DynamicOutletComponet :
+    Using [ngComponentOutlet], we can dynamically render components
+  Encapsule Component :
+    ViewEncapsulation types
+      Emulated :  Default.  Both inbuild & global styles applied only to the given host component, tags outside child component applies only global component.
+      None : Applies inbuild styles to host and content(child) component classes also.
+      ShadowDom : Global style(styles.css) not applied to host component elements
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Eight Module : 
+  HostContextComponent & HostContextChildComponent : 
+    Using :host (in .css), we can able to apply the style to entire component.
+    If we want to apply css to entire child component, if it's wrapped inside a class in parent component we can use :host-context(className)
+      i.e) :host-context(.inside)
+    styles applied under ::ng-deep will be considered as a global styles
+    
+    1) ::ng-deep .span-highlight {}  => it will be considered as global style, this style will be applied to all elements with this class name anywhere in project.
+    2) :host::ng-deep .span-highlight {} => Adding this in parent component css, this style will be applied to all elements with this class name in both parent/child component.
+

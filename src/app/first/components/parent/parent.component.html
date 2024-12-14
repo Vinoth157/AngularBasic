@@ -1,7 +1,12 @@
 <header>Parent</header>
 <div class="container my-3">
   <label for="eName">Employee Name :</label> &nbsp;
-  <input type="text" name="eName" [(ngModel)]="empName" />
+  <input
+    type="text"
+    name="eName"
+    [(ngModel)]="empName"
+    (keyup.enter)="testt($event)"
+  />
 </div>
 <div class="container my-3">
   <label for="eAge">Employee Age :</label> &NonBreakingSpace;

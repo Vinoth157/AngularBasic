@@ -15,4 +15,7 @@ export class ParentComponent implements OnInit {
     console.log(event);
     this.empAge = event;
   }
+  testt(event: any) {
+    console.log(event.key);
+  }
 }

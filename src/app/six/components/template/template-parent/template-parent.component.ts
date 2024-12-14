@@ -5,7 +5,7 @@ import { Component, TemplateRef, Input } from '@angular/core';
   templateUrl: './template-parent.component.html',
 })
 export class TemplateParentComponent {
-  memb = {
+  member = {
     name: 'niranjan',
     age: 1,
     city: 'karur',

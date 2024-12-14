@@ -1,0 +1,29 @@
+<p>encapsule works!</p>
+
+<button (click)="test('emulated')">Emulated</button>
+<button (click)="test('none')">None</button>
+<button (click)="test('shadowDom')">shadowDom</button>
+
+<div #viewComp></div>
+<p class="encapsule">Test</p>
+
+<hr />
+
+<h2>Emulated</h2>
+<p>Child component elemnts applies both inbuild styles and global styles</p>
+<p>Tags outside child component applies only global styles</p>
+
+<hr />
+
+<h2>None</h2>
+<p>Child component inbuild style will be applied to tags in parent component</p>
+
+<hr />
+
+<h2>ShadowDom</h2>
+<p>
+  Child component elemnts applies only inbuild styles, global style not applied
+</p>
+<p>Tags outside child component applies only global styles</p>
+
+<hr />

@@ -5,6 +5,8 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { FormFieldRecordComponent } from './components/form-field-record/form-field-record.component';
 import { TemplateComponent } from './components/template/template.component';
 import { TemplateOutletSampleComponent } from './components/template-outlet/template-outlet-sample.component';
+import { DynamicOutletComponent } from './components/dynamic-outlet/dynamic-outlet.component';
+import { EncapsuleComponent } from './components/encapsule/encapsule.component';
 
 const routes: Routes = [
   {
@@ -28,8 +30,16 @@ const routes: Routes = [
         component: TemplateOutletSampleComponent,
       },
       {
+        path: 'componentOutlet',
+        component: DynamicOutletComponent,
+      },
+      {
+        path: 'encapsule',
+        component: EncapsuleComponent,
+      },
+      {
         path: '**',
-        redirectTo: 'templateOutlet',
+        redirectTo: 'componentOutlet',
         pathMatch: 'full',
       },
     ],

@@ -17,14 +17,6 @@ const routes: Routes = [
     component: FiveComponent,
     children: [
       {
-        path: 'dataForm',
-        component: DataFormComponent,
-      },
-      {
-        path: 'multipleCheck',
-        component: MultipleCheckComponent,
-      },
-      {
         path: 'dynamicRender',
         component: DynamicRenderComponent,
         // children: [{ path: 'register', component: RegisterComponent }],
@@ -49,10 +41,14 @@ const routes: Routes = [
           // },
         ],
       },
-      // {
-      //   path: 'userData',
-      //   component: UserDataComponent,
-      // },
+      {
+        path: 'dataForm',
+        component: DataFormComponent,
+      },
+      {
+        path: 'multipleCheck',
+        component: MultipleCheckComponent,
+      },
 
       {
         path: '**',

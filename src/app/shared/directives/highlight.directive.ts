@@ -13,6 +13,6 @@ export class HighlightDirective {
   }
 
   @HostListener('mouseleave') mouseLeave() {
-    this.color = 'red';
+    this.color = 'green';
   }
 }

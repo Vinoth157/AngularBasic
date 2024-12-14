@@ -15,6 +15,13 @@ import { TemplateParentComponent } from './components/template/template-parent/t
 import { TemplateOutletSampleComponent } from './components/template-outlet/template-outlet-sample.component';
 import { TemplateOutletParentComponent } from './components/template-outlet/template-outlet-parent/template-outlet-parent.component';
 import { TemplateOutletChildComponent } from './components/template-outlet/template-outlet-child/template-outlet-child.component';
+import { DynamicOutletComponent } from './components/dynamic-outlet/dynamic-outlet.component';
+import { UserComponent } from './components/dynamic-outlet/user/user.component';
+import { AdminComponent } from './components/dynamic-outlet/admin/admin.component';
+import { EncapsuleComponent } from './components/encapsule/encapsule.component';
+import { EncapsuleEmulatedComponent } from './components/encapsule/encapsule-emulated.component';
+import { EncapsuleShadowDomComponent } from './components/encapsule/encapsule-shadow-dom.component';
+import { EncapsuleNoneComponent } from './components/encapsule/encapsule-none.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +37,13 @@ import { TemplateOutletChildComponent } from './components/template-outlet/templ
     TemplateOutletSampleComponent,
     TemplateOutletParentComponent,
     TemplateOutletChildComponent,
+    DynamicOutletComponent,
+    UserComponent,
+    AdminComponent,
+    EncapsuleComponent,
+    EncapsuleEmulatedComponent,
+    EncapsuleShadowDomComponent,
+    EncapsuleNoneComponent,
   ],
   imports: [CommonModule, SixRoutingModule, ReactiveFormsModule],
   providers: [
